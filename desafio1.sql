@@ -30,9 +30,8 @@ CREATE TABLE SpotifyClone.Artist (
 CREATE TABLE SpotifyClone.Album (
   id_album INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   album_name VARCHAR(100) NULL,
-  Artist_id_artist INT NULL,
-  CONSTRAINT fk_Album_Artist1
-    FOREIGN KEY (Artist_id_artist)
+  A_id_artist INT NULL,
+    FOREIGN KEY (A_id_artist)
     REFERENCES SpotifyClone.Artist (id_artist)
 )ENGINE = InnoDB;
 
@@ -111,15 +110,15 @@ CREATE TABLE IF NOT EXISTS SpotifyClone.Follow (
   ('The Bard’s Song', '244', '2007'),
   ('Feeling Good', '100', '2012');
 
-  INSERT INTO SpotifyClone.Album (album_name) VALUES
-  ('Renaissance'),
-  ('Jazz'),
-  ('Hot Space'),
-  ('Falso Brilhante'),
-  ('Vento de Maio'),
-  ('QVVJFA?'),
-  ('Somewhere Far Beyond'),
-  ('I Put A Spell On You');
+  INSERT INTO SpotifyClone.Album (album_name, A_id_artist) VALUES
+  ('Renaissance', 1),
+  ('Jazz', 2),
+  ('Hot Space', 2),
+  ('Falso Brilhante', 3),
+  ('Vento de Maio', 3),
+  ('QVVJFA?', 4),
+  ('Somewhere Far Beyond', 5),
+  ('I Put A Spell On You', 6);
 
   INSERT INTO SpotifyClone.History (User_id_history, Music_id_music, date_musics) VALUES
   (1, 8, '2022-02-28 10:45:55'),
